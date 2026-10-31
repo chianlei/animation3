@@ -382,8 +382,10 @@ function App() {
         </span>
       </div>
       <header className="nav">
-        <button className="menuBtn" onClick={() => setMenu(!menu)}>
-          MENU
+        <button className="menuBtn" type="button" aria-label="Menu" disabled>
+          <span />
+          <span />
+          <span />
         </button>
         <nav className={menu ? "open" : ""}>
           <a href="#about">About Us</a>
@@ -577,7 +579,7 @@ function App() {
         </div>
         <img className="heroDrink" src={A + "13.webp"} />
       </section>
-      <section className="about">
+      <section className="about originalAbout">
         <div className="aboutText">
           <h2>About Us</h2>
           <p>
@@ -677,6 +679,18 @@ function App() {
               <img src={A + "31.png"} alt="" />
             </button>
           )}
+          <div className="sodaDots" aria-hidden="true">
+            {sodas.map((_, index) => (
+              <span
+                className={
+                  index === Math.min(sodaPage * 3, sodas.length - 1)
+                    ? "active"
+                    : ""
+                }
+                key={index}
+              />
+            ))}
+          </div>
         </div>
         <a
           className="sodaOrder"
@@ -690,12 +704,17 @@ function App() {
       <section className="world">
         <OpenNowTicker />
         <div className="worldCopy">
-          <h2>
+          <h2 className="worldTitleDesktop">
             Snacks from
             <br />
             all over the
             <br />
             globe
+          </h2>
+          <h2 className="worldTitleMobile">
+            Snacks from all
+            <br />
+            over the globe
           </h2>
           <p>
             From Korea to Mexico, Japan to the UK—Johnny’s snack lineup is a
@@ -786,6 +805,18 @@ function App() {
             </button>
           )}
         </div>
+        <div className="snackDots" aria-hidden="true">
+          {snacks.map((_, index) => (
+            <span
+              className={
+                index === (snackPage === 0 ? 0 : snacks.length - 1)
+                  ? "active"
+                  : ""
+              }
+              key={index}
+            />
+          ))}
+        </div>
         <a
           className="snacksOrder"
           href="https://www.doordash.com/store/johnnys-dirty-soda-1722-w-belmont-ave-chicago-40558927/97830148/"
@@ -806,6 +837,42 @@ function App() {
               fill="#FABC2A"
             />
           </svg>
+        </div>
+        <div className="snacksMobileWave" aria-hidden="true">
+          <svg
+            viewBox="0 0 1518 108"
+            preserveAspectRatio="none"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M1302.81 57.1917C1269.04 21.9552 1221.4 0 1168.62 0C1114.08 0 1065.05 23.4296 1031.12 60.7266C1006.54 48.7468 978.903 42.0196 949.687 42.0196C918.821 42.0196 889.718 49.5287 864.117 62.8076C830.131 24.3041 780.299 0 724.761 0C670.88 0 622.368 22.8759 588.488 59.4008C564.609 48.2516 537.952 42.0196 509.832 42.0196C486.086 42.0196 463.383 46.4646 442.515 54.5606C408.919 20.8667 362.357 0 310.898 0C264.393 0 221.887 17.0407 189.337 45.19C178.194 43.11 166.699 42.0196 154.949 42.0196C90.1777 42.0196 33.1625 57.1532 0 107.241H1518C1483.98 67.3408 1433.24 42.0196 1376.55 42.0196C1350.34 42.0196 1325.41 47.432 1302.81 57.1917Z"
+              fill="#FABC2A"
+            />
+          </svg>
+        </div>
+      </section>
+      <section className="mobileAbout">
+        <h2>About Us</h2>
+        <div className="aboutPhoto">
+          <img src={A + "16.webp"} />
+        </div>
+        <div className="aboutText">
+          <p>
+            Hi! We are a <strong>local family owned business</strong> and have
+            all been born and raised here in Chicago. We’re here to bring back
+            that sweet sense of community—one fizzy glass and savory snack at a
+            time. We are so excited to bring a new experience and{" "}
+            <strong>flavor to Lakeview.</strong>
+          </p>
+          <hr />
+          <p>
+            As we start making our mark, we believe in the power of local
+            connections and <strong>community creativity.</strong> Whether
+            you&apos;re a local artist, small business, event organizer, or just
+            someone with a fun idea, we’d love to hear from you. Reach out—let’s
+            dream up something cool together!
+          </p>
         </div>
       </section>
       <section className="cta" id="contact">

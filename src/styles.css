@@ -428,6 +428,9 @@ button {
   width: 100%;
   height: 100%;
 }
+.mobileAbout {
+  display: none;
+}
 .sodas {
   background: #833ca1;
   color: #fff;
@@ -747,6 +750,9 @@ button {
   text-transform: uppercase;
   margin: 0;
 }
+.worldTitleMobile {
+  display: none;
+}
 .world p {
   width: 100%;
   max-width: none;
@@ -901,6 +907,9 @@ button {
   width: 100%;
   height: 100%;
 }
+.snacksMobileWave {
+  display: none;
+}
 .snacksIntro {
   display: grid;
   grid-template-columns: 42% 42%;
@@ -1053,6 +1062,9 @@ button {
   width: 33px;
   height: 33px;
   object-fit: contain;
+}
+.snackDots {
+  display: none;
 }
 .cta {
   min-height: 0;
@@ -1475,7 +1487,7 @@ button {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 809px) {
   .definition {
     display: block;
     height: 820px;
@@ -1804,7 +1816,7 @@ h2,
   opacity: 0.8;
   transform: rotate(15deg);
 }
-@media (max-width: 900px) {
+@media (max-width: 809px) {
   .openNowBar {
     height: 34px;
     padding: 0 20px;
@@ -1826,7 +1838,7 @@ h2,
     width: 100px;
   }
   .nav nav {
-    display: flex;
+    display: flex !important;
   }
   .nav nav:not(.open) {
     transform: translateY(-110%);
@@ -2172,7 +2184,7 @@ h2,
   width: 67.5vw;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 809px) {
   .storySticky {
     height: 720px;
     min-height: 720px;
@@ -2294,7 +2306,7 @@ h2,
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 809px) {
   .about {
     height: auto;
     min-height: 1050px;
@@ -2428,5 +2440,839 @@ h2,
   }
   .snacksOrder {
     margin-left: calc(50vw - 118px);
+  }
+}
+
+/* Mobile landing composition. Desktop begins at 810px and is intentionally untouched. */
+@media (max-width: 809px) {
+  .openNowBar {
+    height: 23px;
+    padding: 0 8px;
+    gap: 17px;
+    justify-content: center;
+    font-size: 10px;
+  }
+  .openNowBar span {
+    display: inline-flex !important;
+    gap: 5px;
+  }
+  .openNowBar b {
+    font-size: 11px;
+  }
+
+  .nav {
+    position: relative;
+    top: auto;
+    width: 100%;
+    height: 62px;
+    padding: 0 24px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+    column-gap: 0;
+  }
+  .nav::after {
+    display: none;
+  }
+  .nav .logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+  .nav .logo img {
+    width: 90px;
+  }
+  .nav .order {
+    display: none;
+  }
+  .menuBtn {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 1001;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: end;
+    display: flex;
+    width: 38px;
+    height: 26px;
+    padding: 0;
+    border: 0;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: none;
+    cursor: default;
+    background:
+      linear-gradient(#111 0 0) top / 100% 2px no-repeat,
+      linear-gradient(#111 0 0) center / 100% 2px no-repeat,
+      linear-gradient(#111 0 0) bottom / 100% 2px no-repeat;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menuBtn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: #111;
+  }
+  .nav nav {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background: var(--mint);
+    font-family: Badrock, Impact, sans-serif;
+    font-size: 42px;
+    transition:
+      transform 0.35s ease,
+      visibility 0.35s ease;
+  }
+  .nav nav:not(.open) {
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-110%);
+  }
+  .nav nav.open {
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .cartHero {
+    height: 500px;
+    padding: 0 25px;
+    align-items: center;
+  }
+  .cartHero::before {
+    width: 100%;
+  }
+  .eventCard {
+    width: min(334px, 100%);
+    max-width: 334px;
+    min-width: 0;
+    height: 400px;
+    min-height: 400px;
+    padding: 23px 19px;
+    grid-template-columns: 1fr;
+    align-content: start;
+    border-radius: 23px;
+    box-shadow: 7px 8px 0 #292929;
+  }
+  .eventText small {
+    padding: 7px 10px;
+    border-radius: 18px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .eventText h1 {
+    margin: 16px 0 15px;
+    font-size: clamp(21px, 6.67vw, 25px);
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .eventText p {
+    font-size: 16px;
+    line-height: 1.36;
+  }
+  .desktopBreak {
+    display: none;
+  }
+  .eventActions {
+    align-items: stretch;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .eventTypes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .eventTypes b {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+  .eventActions > a {
+    width: 100%;
+    min-height: 46px;
+    padding: 13px 18px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .bookBadge {
+    top: -23px;
+    right: 13px;
+    width: 74px;
+    height: 74px;
+    font-size: 14px;
+  }
+  .bookBadge small {
+    font-size: 9px;
+  }
+}
+
+/* Dirty Soda mobile composition. */
+@media (max-width: 809px) {
+  .definition {
+    position: relative;
+    height: 871px;
+    min-height: 871px;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+  }
+  .definition::after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    background:
+      radial-gradient(
+        ellipse 94px 36px at 19% 36px,
+        #833ca1 99%,
+        transparent 100%
+      ),
+      radial-gradient(
+        ellipse 108px 74px at 57% 74px,
+        #833ca1 99%,
+        transparent 100%
+      ),
+      radial-gradient(
+        ellipse 90px 36px at 92% 36px,
+        #833ca1 99%,
+        transparent 100%
+      ),
+      linear-gradient(to bottom, transparent 0 36px, #833ca1 36px 100%);
+    pointer-events: none;
+  }
+  .definitionBackdrop {
+    z-index: 1;
+    top: 50px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: auto;
+    aspect-ratio: 1158 / 294;
+  }
+  .definition .pour {
+    z-index: 2;
+    top: 172px;
+    left: 20px;
+    bottom: auto;
+    width: calc(100% - 40px);
+    height: 156px;
+    border-radius: 26px;
+    background: #cc8da9;
+    overflow: hidden;
+  }
+  .definition .pour::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 1px;
+    background: #e7e7e7;
+  }
+  .definition .pour img {
+    object-fit: cover;
+    object-position: center;
+  }
+  .definition .definitionCopy {
+    z-index: 4;
+    top: 355px;
+    left: 20px;
+    bottom: auto;
+    width: calc(100% - 40px);
+    padding: 0;
+  }
+  .definition .definitionCopy::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: -27px 0 24px;
+    background: #e7e7e7;
+  }
+  .definition .definitionCopy h2 {
+    max-width: 320px;
+    margin: 0 0 20px;
+    color: #1c1c1c;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .definition .definitionCopy p {
+    max-width: none;
+    margin: 0;
+    color: #111;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.32;
+  }
+  .definition .heroDrink {
+    display: none;
+  }
+}
+
+/* Dirty Sodas mobile carousel. */
+.sodaDots {
+  display: none;
+}
+@media (max-width: 809px) {
+  .sodas {
+    min-height: 0;
+    padding: 0 0 32px 20px;
+    gap: 0;
+    align-items: stretch;
+  }
+  .sodas > header {
+    order: 1;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 0;
+    width: 100%;
+    height: 315px;
+    padding: 62px 18px 0 0;
+    align-items: start;
+  }
+  .sodasHeading {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex: none;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .sodasHeading::after {
+    content: "»";
+    position: absolute;
+    top: 0;
+    left: 132px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    color: #111;
+    font-family: Manrope, sans-serif;
+    font-size: 25px;
+    line-height: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  }
+  .sodas > header small {
+    position: relative;
+    min-height: 34px;
+    padding: 7px 13px 7px 34px;
+    font-size: 0;
+  }
+  .sodas > header small::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 8px;
+    left: 9px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #315f21 0 4px, #e8eee5 5px 100%);
+  }
+  .sodas > header small::after {
+    content: "Our Product";
+    position: relative;
+    font-size: 15px;
+  }
+  .sodasHeading h2,
+  .sodas > header h2 {
+    width: 180px;
+    margin: 0;
+    font-size: 54px;
+    line-height: 0.98;
+  }
+  .sodasBody {
+    width: 100%;
+    height: auto;
+    flex: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 14px;
+  }
+  .sodas > header p {
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .sodaOrder {
+    order: 2;
+    align-self: center;
+    width: 196px;
+    height: 50px;
+    margin: 8px 0 0 -20px;
+    font-size: 16px;
+  }
+  .sodaCarousel {
+    order: 3;
+    width: 100%;
+    max-width: none;
+    margin-top: 76px;
+  }
+  .sodaRail {
+    gap: 20px;
+    padding: 0;
+    scroll-padding-left: 0;
+  }
+  .sodaRail article {
+    flex: 0 0 266px;
+    min-width: 266px;
+    height: 366px;
+    padding: 18px 25px 25px;
+    border-radius: 34px;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+  .drinkBlob {
+    flex: 0 0 238px;
+    width: 76%;
+    height: 238px;
+  }
+  .sodaRail h3 {
+    font-size: 38px;
+    line-height: 1.05;
+  }
+  .sodaRail p {
+    font-size: 15px;
+    line-height: 1.25;
+  }
+  .sodaNext {
+    top: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .sodaNextRight {
+    right: 10px;
+  }
+  .sodaNextLeft {
+    left: 10px;
+  }
+  .sodaDots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: calc(100% - 20px);
+    margin-top: 26px;
+  }
+  .sodaDots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+  }
+  .sodaDots span.active {
+    background: #fff;
+  }
+}
+
+/* Globe mobile composition. */
+@media (max-width: 809px) {
+  .world {
+    z-index: 5;
+    width: 100%;
+    max-width: none;
+    height: 680px;
+    min-height: 680px;
+    padding: 0 20px;
+    overflow: hidden;
+    align-items: flex-start;
+    justify-content: center;
+    isolation: isolate;
+  }
+  .world::before {
+    width: 100%;
+  }
+  .world > .worldCopy {
+    width: 100%;
+    max-width: none;
+    padding-top: 120px;
+    align-items: center;
+    gap: 26px;
+    text-align: center;
+  }
+  .worldTitleDesktop {
+    display: none;
+  }
+  .world .worldTitleMobile {
+    display: block;
+    width: 100%;
+    color: #8d3ca8;
+    font-size: 56px;
+    line-height: 0.98;
+    text-align: center;
+  }
+  .world p {
+    width: 100%;
+    max-width: 340px;
+    font-size: 18px;
+    line-height: 1.38;
+    text-align: center;
+  }
+  .world .worldOrder {
+    width: 187px;
+    height: 48px;
+    padding: 11px 24px 11px 17px;
+    gap: 10px;
+    font-size: 16px;
+  }
+  .world .worldOrder img {
+    width: 39px;
+    height: 26px;
+  }
+  .world > img {
+    top: auto;
+    right: auto;
+    bottom: -25px;
+    left: 50%;
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+    transform: translateX(-50%);
+  }
+  .worldTicker {
+    top: -20px;
+    left: -70%;
+    width: 240%;
+    height: 110px;
+  }
+  .worldTicker span {
+    min-width: max-content;
+  }
+  .tickerGroup {
+    gap: 22px;
+    height: 110px;
+    padding: 17px 42px;
+    border-width: 8px;
+  }
+  .worldTicker b {
+    gap: 8px;
+    font-size: 36px;
+  }
+  .worldTicker em {
+    font-size: 36px;
+  }
+  .worldTickerBottom {
+    top: auto;
+    bottom: -20px;
+    left: -70%;
+    width: 240%;
+  }
+}
+
+/* Exotic Snacks mobile carousel. */
+@media (max-width: 809px) {
+  .snacks {
+    padding: 18px 0 60px 20px;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  .snacksIntro {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-content: start;
+    align-items: start;
+    gap: 0;
+    width: 100%;
+    height: 340px;
+    padding: 0 20px 0 0 !important;
+  }
+  .snacksIntro > div {
+    position: relative;
+  }
+  .snacksIntro > div::after {
+    content: "»";
+    position: absolute;
+    top: 0;
+    left: 132px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    color: #111;
+    font-family: Manrope, sans-serif;
+    font-size: 25px;
+    line-height: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  }
+  .snacksIntro small {
+    position: relative;
+    min-height: 34px;
+    padding: 7px 13px 7px 34px;
+    font-size: 0;
+  }
+  .snacksIntro small::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 9px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #315f21 0 4px, #e8eee5 5px 100%);
+  }
+  .snacksIntro small::after {
+    content: "Our Product";
+    position: relative;
+    font-size: 15px;
+  }
+  .snacksIntro h2 {
+    width: 180px;
+    margin: 24px 0 0;
+    font-size: 54px;
+    line-height: 0.98;
+  }
+  .snacksIntro p {
+    align-self: start;
+    justify-self: start;
+    width: 100%;
+    margin: 90px 0 0;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .snackCarousel {
+    margin-top: 0;
+  }
+  .snackGrid {
+    gap: 20px;
+  }
+  .snackGrid article {
+    flex: 0 0 248px;
+    width: 248px;
+    height: 362px;
+    padding: 16px;
+    border-radius: 22px;
+  }
+  .snackGrid article > .snackImage {
+    width: 216px;
+    height: 197px;
+    border-radius: 25px;
+  }
+  .snackGrid h3 {
+    margin: 12px 0 6px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .snackFlag {
+    padding: 5px 13px;
+    font-size: 20px;
+  }
+  .snackNext {
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  .snackNextLeft {
+    right: auto;
+    left: 10px;
+  }
+  .snackDots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 120px;
+    height: 30px;
+    margin: 8px 0 0 calc(50vw - 80px);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.16);
+  }
+  .snackDots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+  }
+  .snackDots span.active {
+    background: #fff;
+  }
+  .snacksOrder {
+    width: 196px;
+    height: 50px;
+    margin: 34px 0 0 calc(50vw - 118px);
+    font-size: 16px;
+  }
+  .snacksWave {
+    display: none;
+  }
+  .snacksMobileWave {
+    position: absolute;
+    z-index: 4;
+    left: -50%;
+    bottom: -63px;
+    display: block;
+    width: 200%;
+    height: 63px;
+    filter: drop-shadow(rgb(250, 188, 42) 0 2px 1px);
+    transform: rotate(180deg);
+    pointer-events: none;
+  }
+  .snacksMobileWave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* About Us moves below Exotic Snacks on mobile only. */
+@media (max-width: 809px) {
+  .originalAbout {
+    display: none;
+  }
+  .mobileAbout {
+    display: block;
+    min-height: 0;
+    padding: 170px 20px 72px;
+    background: #fff;
+    color: #111;
+  }
+  .mobileAbout > h2 {
+    margin: 0 0 20px;
+    color: #e83259;
+    font-family: Badrock, Impact, sans-serif;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 0.95;
+  }
+  .mobileAbout .aboutPhoto {
+    width: 100%;
+    height: 162px;
+    border-radius: 26px;
+  }
+  .mobileAbout .aboutText {
+    margin-top: 35px;
+  }
+  .mobileAbout .aboutText p {
+    margin: 0;
+    color: #111;
+    font-family: "Onest", "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+  .mobileAbout .aboutText strong {
+    color: #111;
+    font-weight: 600;
+  }
+  .mobileAbout .aboutText hr {
+    margin: 20px 0 24px;
+    border: 0;
+    border-top: 2px solid #e2e2e2;
+  }
+}
+
+/* Final CTA and footer mobile composition. */
+@media (max-width: 809px) {
+  .cta {
+    min-height: 430px;
+    margin-top: 0;
+    padding: 50px 20px 40px;
+    overflow: hidden;
+  }
+  .ctaStack {
+    width: 100%;
+    gap: 30px;
+  }
+  .cta h2 {
+    width: 100%;
+    margin: 0;
+    font-size: 64px;
+    line-height: 0.95;
+    text-align: center;
+  }
+  .ctaOrderShell {
+    width: 196px;
+    height: 50px;
+    padding: 0;
+  }
+  .ctaOrder {
+    width: 100%;
+    height: 100%;
+    padding: 11px 24px 11px 17px;
+    font-size: 16px;
+  }
+  .cta address {
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .cta address svg {
+    width: 17px;
+    height: 20px;
+  }
+
+  .siteFooter {
+    height: 470px;
+    padding: 0;
+  }
+  .footerWave {
+    flex: 0 0 63px;
+    width: 200%;
+    height: 63px;
+    margin-left: -50%;
+  }
+  .footerBody {
+    flex: 0 0 407px;
+    align-items: flex-start;
+  }
+  .footerContent {
+    width: 100%;
+    height: 381px;
+  }
+  .footerLogo {
+    top: 8px;
+    width: 116px;
+  }
+  .footerNav {
+    top: 78px;
+    left: 20px;
+    display: flex;
+    gap: 14px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .footerPhone {
+    top: 205px;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .footerEmail {
+    top: 242px;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .footerSocials {
+    top: 276px;
+    width: 252px;
+    height: 48px;
+  }
+  .footerContent > small {
+    top: 306px;
+    left: 20px;
+    width: 92px;
+    transform: none;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.35;
   }
 }
